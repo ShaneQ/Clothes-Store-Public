@@ -47,6 +47,7 @@ public class FooController {
     }
 
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:8089")
     public Collection<FooDto> findAll() {
         Iterable<Foo> foos = this.fooService.findAll();
         List<FooDto> fooDtos = new ArrayList<>();
