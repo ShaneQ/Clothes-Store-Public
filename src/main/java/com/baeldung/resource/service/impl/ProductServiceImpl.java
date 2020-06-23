@@ -12,8 +12,8 @@ public class ProductServiceImpl implements IProductService {
 
     private IProductRepository ProductRepository;
 
-    public ProductServiceImpl(IProductRepository ProductRepository) {
-        this.ProductRepository = ProductRepository;
+    public ProductServiceImpl(IProductRepository productRepository) {
+        this.ProductRepository = productRepository;
     }
 
     @Override
@@ -30,4 +30,6 @@ public class ProductServiceImpl implements IProductService {
     public Iterable<Product> findAll() {
         return ProductRepository.findAll();
     }
+
+
 }

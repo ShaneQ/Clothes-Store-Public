@@ -5,30 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public class ProductSize {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
-    private String description;
-
-    private String type;
+    private Long id_product;
 
     @OneToOne
-    @JoinColumn(name = "id_cover_img")
-    private Image coverImg;
-
-    @OneToMany
-    @JoinColumn(name = "id_product")
-    private List<ProductSize> sizes;
-
+    @JoinColumn(name = "id_size")
+    private Sizes size;
 }

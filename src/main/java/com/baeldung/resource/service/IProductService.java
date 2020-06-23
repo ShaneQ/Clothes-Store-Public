@@ -2,6 +2,7 @@ package com.baeldung.resource.service;
 
 import com.baeldung.resource.persistence.model.Product;
 
+import java.util.List;
 import java.util.Optional;
 
 
