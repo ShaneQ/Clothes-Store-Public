@@ -1,8 +1,6 @@
 package com.baeldung.resource.web.dto;
 
-import com.baeldung.resource.persistence.model.Image;
-import com.baeldung.resource.persistence.model.ProductImage;
-import com.baeldung.resource.persistence.model.ProductSize;
+import com.baeldung.resource.persistence.model.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,8 +14,15 @@ public class ProductDTO {
     private long id;
     private String name;
     private String imagePath;
-    private String type;
+    private String quickDesc;
+    private String fittingInfo;
+    private String washInfo;
+    private String material;
     private String description;
+    private boolean dryClean;
+    private ProductMeasurement measurement;
     private Image coverImg;
+    private ProductCategory category;
     private List<ProductSize> sizes;
+    private List<ProductOccasion> occasions;
 }
