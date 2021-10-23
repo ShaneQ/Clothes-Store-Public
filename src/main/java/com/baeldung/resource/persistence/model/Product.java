@@ -30,6 +30,11 @@ public class Product {
     private String fittingInfo;
     private String washInfo;
 
+    private double retailPrice;
+
+    private double rentalPrice;
+
+
 
     private String type;
 

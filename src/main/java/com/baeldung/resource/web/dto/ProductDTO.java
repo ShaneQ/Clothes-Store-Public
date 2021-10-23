@@ -19,6 +19,7 @@ public class ProductDTO {
     private String washInfo;
     private String material;
     private String description;
+    private double rentalPrice;
     private boolean dryClean;
     private ProductMeasurement measurement;
     private Image coverImg;

@@ -49,12 +49,12 @@ INSERT INTO IMAGE (path) VALUES
   ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kUVuAjGZ8a6N1Tz9m0i0zKXVkk0CTJnJslJu6Z3Pk17XqOdSyQ&s');
 ;
 
-INSERT INTO PRODUCT (name, id_product_measurement, id_product_category, id_cover_img, dry_clean, quick_desc, material, description, fitting_info, wash_info  ) VALUES
-  ('Dress',1, 1,1,TRUE ,'Something Nice and Short', 'cotton','something very long', 'Its tight', 'Dryclean only'),
-  ('Jumper',2, 2, NULL,FALSE,'Something Good','denim','something very long', 'Its loose', 'No spills or i will cut you'),
-  ('Pants',3, 5, NULL,TRUE, '','silk', 'something very long', 'It weird', 'you wouldnt believe how much this cost dont hand wash'),
-  ('Sweater',4, 2, NULL, TRUE,'Cotton', 'Something Else','something very long', 'Its descriptive', 'some other cut and wash info'),
-  ('Coat',5, 4, NULL, FALSE, 'Something Bad','Nylon','something very long','i will make you feel 30','care for it really well');
+INSERT INTO PRODUCT (name, id_product_measurement, id_product_category, id_cover_img, dry_clean, rental_price, retail_price, quick_desc, material, description, fitting_info, wash_info  ) VALUES
+  ('Dress',1, 1,1,TRUE, 10.50, 100 ,'Something Nice and Short', 'cotton','something very long', 'Its tight', 'Dryclean only'),
+  ('Jumper',2, 2, NULL,FALSE, 20,200,'Something Good','denim','something very long', 'Its loose', 'No spills or i will cut you'),
+  ('Pants',3, 5, NULL,TRUE,30.40, 300, '','silk', 'something very long', 'It weird', 'you wouldnt believe how much this cost dont hand wash'),
+  ('Sweater',4, 2, NULL, TRUE, 40, 400.50,'Cotton', 'Something Else','something very long', 'Its descriptive', 'some other cut and wash info'),
+  ('Coat',5, 4, NULL, FALSE, 40.66, 500,'Something Bad','Nylon','something very long','i will make you feel 30','care for it really well');
 ;
 
 INSERT INTO PRODUCT_SIZE (id_product, id_size) VALUES
