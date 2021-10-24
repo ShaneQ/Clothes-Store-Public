@@ -8,6 +8,7 @@ logging:
     org:
       springframework:
         security: DEBUG
+
         spring:
 spring:
   security:
@@ -15,3 +16,5 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: https://quick-fix-needs-to-be-removed
+  flyway:
+    enabled: false

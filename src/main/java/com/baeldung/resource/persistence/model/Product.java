@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity(name = "PRODUCT")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

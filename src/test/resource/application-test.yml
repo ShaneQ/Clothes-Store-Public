@@ -15,3 +15,6 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: https://dev-.....okta.com/oauth2/default
+
+  flyway:
+    enabled: false

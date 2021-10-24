@@ -1,0 +1,63 @@
+CREATE TABLE IF NOT EXISTS  product (
+    ID INT PRIMARY KEY,
+    NAME varchar(256),
+    ID_PRODUCT_MEASUREMENT INT,
+    ID_PRODUCT_CATEGORY INT,
+    ID_COVER_IMG INT,
+    DRY_CLEAN BOOLEAN ,
+    RENTAL_PRICE double,
+    RETAIL_PRICE double,
+    TYPE varchar(256),
+    QUICK_DESC varchar(256),
+    MATERIAL varchar(256),
+    DESCRIPTION varchar(256),
+    FITTING_INFO varchar(256),
+    WASH_INFO varchar(256)
+);
+
+CREATE TABLE IF NOT EXISTS  product_category (
+    ID INT PRIMARY KEY,
+    NAME varchar(256)
+);
+
+CREATE TABLE IF NOT EXISTS  product_occasion (
+    ID INT PRIMARY KEY,
+    ID_PRODUCT INT,
+    ID_OCCASION INT
+);
+
+
+CREATE TABLE IF NOT EXISTS  product_size (
+    ID INT PRIMARY KEY,
+    ID_PRODUCT INT,
+    ID_SIZE INT
+);
+
+CREATE TABLE IF NOT EXISTS  product_measurement (
+    ID INT PRIMARY KEY,
+    LENGTH INT,
+    HIPS INT,
+    WAIST INT,
+    CHEST INT
+);
+
+CREATE TABLE IF NOT EXISTS  product_image (
+    ID INT PRIMARY KEY,
+    ID_PRODUCT INT,
+    ID_IMAGE INT
+);
+
+CREATE TABLE IF NOT EXISTS  image (
+    ID INT PRIMARY KEY,
+    PATH varchar(1000)
+);
+
+CREATE TABLE IF NOT EXISTS  occasion (
+    ID INT PRIMARY KEY,
+    NAME varchar(256)
+);
+
+CREATE TABLE IF NOT EXISTS  size (
+    ID INT PRIMARY KEY,
+    NAME varchar(256)
+);

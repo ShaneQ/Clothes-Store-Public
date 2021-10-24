@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductSize {
+public class  ProductSize {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +20,5 @@ public class ProductSize {
 
     @OneToOne
     @JoinColumn(name = "id_size")
-    private Sizes size;
+    private Size size;
 }
