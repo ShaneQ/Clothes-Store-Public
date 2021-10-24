@@ -31,7 +31,6 @@ public class FooController {
         this.fooService = fooService;
     }
 
-    @CrossOrigin(origins = "http://localhost:8089")
     @GetMapping(value = "/{id}")
     public FooDto findOne(@PathVariable Long id) {
         Foo entity = fooService.findById(id)
@@ -47,7 +46,6 @@ public class FooController {
     }
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:8089")
     public Collection<FooDto> findAll() {
         Iterable<Foo> foos = this.fooService.findAll();
         List<FooDto> fooDtos = new ArrayList<>();

@@ -5,6 +5,7 @@ import com.baeldung.resource.service.IProductService;
 import com.baeldung.resource.web.dto.ProductDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,7 +30,6 @@ public class ProductController {
     }
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:8089")
     public Collection<ProductDTO> findAll() {
         Iterable<Product> products = this.productService.findAll();
         List<ProductDTO> dtos = new ArrayList<>();
@@ -46,14 +46,12 @@ public class ProductController {
     }
 
     @GetMapping(value = "/{id}")
-    @CrossOrigin(origins = "http://localhost:8089")
     public ProductDTO findOne(Principal principal, @PathVariable Long id) {
         Product entity = productService.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
 
-    @CrossOrigin(origins = "http://localhost:8089")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void create(@RequestBody ProductDTO newFoo) {

@@ -1,0 +1,11 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://ec2-34-242-16-133.eu-west-1.compute.amazonaws.com:8083/auth/realms/secondClosetClub
+          jwk-set-uri: http://ec2-34-242-16-133.eu-west-1.compute.amazonaws.com:8083/auth/realms/secondClosetClub/protocol/openid-connect/certs
+  datasource:
+    username: admin
+    password: TEST
+    url: jdbc:mysql://scc.cxnse0qgwvdu.eu-west-1.rds.amazonaws.com:3306/resource

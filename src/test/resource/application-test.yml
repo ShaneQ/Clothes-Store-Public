@@ -14,4 +14,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: https://quick-fix-needs-to-be-removed
+          jwk-set-uri: https://dev-.....okta.com/oauth2/default
