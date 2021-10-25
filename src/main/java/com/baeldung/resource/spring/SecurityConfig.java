@@ -49,8 +49,7 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.authorizeRequests()
-                .antMatchers("/api/product/*")
-                .hasRole("SCOPE_read")
+                .antMatchers("/api/public*").hasRole("SCOPE_read")
                 .anyRequest()
                 .permitAll();
     }
