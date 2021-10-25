@@ -7,7 +7,7 @@ spring:
           jwk-set-uri: http://localhost:8083/auth/realms/secondClosetClub/protocol/openid-connect/certs
   datasource:
     username: admin
-    password: LucidAN21&
+    password: TEST
     url: jdbc:mysql://scc.cxnse0qgwvdu.eu-west-1.rds.amazonaws.com:3306/resource-local
     driver-class-name: com.mysql.cj.jdbc.Driver
 

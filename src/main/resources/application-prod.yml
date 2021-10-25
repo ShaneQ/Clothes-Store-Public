@@ -9,3 +9,10 @@ spring:
     username: admin
     password: TEST
     url: jdbc:mysql://scc.cxnse0qgwvdu.eu-west-1.rds.amazonaws.com:3306/resource
+
+  flyway:
+    url: jdbc:mysql://scc.cxnse0qgwvdu.eu-west-1.rds.amazonaws.com:3306
+    schemas: resource
+    user: admin
+    password: TEST
+    enabled: true
