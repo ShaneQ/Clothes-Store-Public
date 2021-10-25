@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(value = "/api/product")
 public class ProductController {
 
@@ -30,7 +31,6 @@ public class ProductController {
     }
 
     @GetMapping
-    @CrossOrigin(origins = "http://localhost:8089")
     public Collection<ProductDTO> findAll() {
         Iterable<Product> products = this.productService.findAll();
         List<ProductDTO> dtos = new ArrayList<>();
@@ -47,7 +47,6 @@ public class ProductController {
     }
 
     @GetMapping(value = "/{id}")
-    @CrossOrigin(origins = "http://localhost:8089")
     public ProductDTO findOne(Principal principal, @PathVariable Long id) {
         Product entity = productService.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
@@ -56,14 +55,12 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:8089")
     public void create(@RequestBody ProductDTO newFoo) {
         Product entity = convertToEntity(newFoo);
         this.productService.save(entity);
     }
 
     @PutMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:8089")
     public ProductDTO updateProduct(@PathVariable("id") Long id, @RequestBody ProductDTO dto) {
         Product entity = convertToEntity(dto);
         return this.convertToDto(this.productService.save(entity));
