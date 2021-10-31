@@ -17,6 +17,7 @@ public class ProductImage {
     private Long id;
 
     private Long id_product;
-
-    private String id_image;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_image")
+    private Image id_image;
 }

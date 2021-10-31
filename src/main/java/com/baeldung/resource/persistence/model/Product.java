@@ -32,29 +32,27 @@ public class Product {
 
     private double retailPrice;
 
-    private double rentalPrice;
-
-
-
-    private String type;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product_category")
     private ProductCategory category;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product_measurement")
     private ProductMeasurement measurement;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_cover_img")
-    private Image coverImg;
+    private Image imgCover;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_product")
+    private List<ProductImage> images;
+
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product")
     private List<ProductOccasion> occasions;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_product")
     private List<ProductSize> sizes;
 

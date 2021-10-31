@@ -11,10 +11,5 @@ logging:
 
         spring:
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: https://quick-fix-needs-to-be-removed
   flyway:
     enabled: false

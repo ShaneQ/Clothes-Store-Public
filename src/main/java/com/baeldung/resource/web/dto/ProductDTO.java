@@ -13,7 +13,6 @@ import java.util.List;
 public class ProductDTO {
     private long id;
     private String name;
-    private String imagePath;
     private String quickDesc;
     private String fittingInfo;
     private String washInfo;
@@ -22,8 +21,8 @@ public class ProductDTO {
     private double rentalPrice;
     private boolean dryClean;
     private ProductMeasurement measurement;
-    private Image coverImg;
-    private ProductCategory category;
-    private List<ProductSize> sizes;
+    private ImageDTO imgCover;
+    private List<ImageDTO> images;
+    private List<SizeDTO> sizes;
     private List<ProductOccasion> occasions;
 }
