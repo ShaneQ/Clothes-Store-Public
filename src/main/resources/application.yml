@@ -1,7 +1,7 @@
 server: 
-  port: 8081
+  port: 8082
   servlet: 
-    context-path: /resource-server
+    context-path: /public-resource-server
 
 logging:
   level:
@@ -10,6 +10,3 @@ logging:
         security: DEBUG
 
         spring:
-spring:
-  flyway:
-    enabled: false
