@@ -4,7 +4,7 @@ import com.baeldung.resource.persistence.model.Product;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.data.jpa.domain.Specification;
 
 public interface IProductService {
 
@@ -14,4 +14,5 @@ public interface IProductService {
 
     Iterable<Product> findAll();
 
+    Iterable<Product> findAll(Specification<Product> spec);
 }

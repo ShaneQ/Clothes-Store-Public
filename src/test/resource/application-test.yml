@@ -1,7 +1,7 @@
 server: 
-  port: 8081
+  port: 8082
   servlet: 
-    context-path: /resource-server
+    context-path: /public-resource-server
 
 logging:
   level:
@@ -9,12 +9,3 @@ logging:
       springframework:
         security: DEBUG
         spring:
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: https://dev-.....okta.com/oauth2/default
-
-  flyway:
-    enabled: false

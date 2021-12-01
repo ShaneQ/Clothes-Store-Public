@@ -1,6 +1,7 @@
 package com.baeldung.resource.persistence.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
 
     @Id
@@ -20,6 +22,8 @@ public class Product {
     private String name;
 
     private boolean dryClean;
+    private boolean hidden;
+    private boolean deleted;
 
     private String quickDesc;
 
@@ -32,20 +36,27 @@ public class Product {
 
     private double retailPrice;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_product_category")
     private ProductCategory category;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_product_measurement")
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_season")
+    private Season season;
+
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_color")
+    private Color color;
+
+    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private ProductMeasurement measurement;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_cover_img")
     private Image imgCover;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_product")
+    @OneToMany(mappedBy="product", cascade = CascadeType.ALL,  orphanRemoval = true)
     private List<ProductImage> images;
 
     @OneToMany(cascade = CascadeType.ALL)

@@ -3,6 +3,7 @@ package com.baeldung.resource.service.impl;
 import com.baeldung.resource.persistence.model.Product;
 import com.baeldung.resource.persistence.repository.IProductRepository;
 import com.baeldung.resource.service.IProductService;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,8 +13,12 @@ public class ProductServiceImpl implements IProductService {
 
     private IProductRepository ProductRepository;
 
-    public ProductServiceImpl(IProductRepository productRepository) {
+    private com.baeldung.resource.persistence.repository.ProductRepository productRepTwo;
+
+    public ProductServiceImpl(IProductRepository productRepository,
+            com.baeldung.resource.persistence.repository.ProductRepository productRepTwo) {
         this.ProductRepository = productRepository;
+        this.productRepTwo = productRepTwo;
     }
 
     @Override
@@ -28,8 +33,11 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public Iterable<Product> findAll() {
-        return ProductRepository.findAll();
+        return ProductRepository.findByDeletedFalseAndHiddenFalse();
     }
 
-
+    @Override
+    public Iterable<Product> findAll(Specification<Product> spec) {
+        return productRepTwo.findAll(spec);
+    }
 }
